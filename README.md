@@ -9,14 +9,14 @@ Asegúrate de tener Node.js y npm instalados en tu sistema antes de continuar.
 1. Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tu-usuario/FullstackTest4.git
+git clone https://github.com/aitiu0/FrontendDEC24.git
 
 ```
 
 2. Navega al directorio del proyecto:
 
 ```bash
-cd FullstackTest4
+cd FrontendDEC24
 
 ```
 3. Instala las dependencias del servidor y del cliente:

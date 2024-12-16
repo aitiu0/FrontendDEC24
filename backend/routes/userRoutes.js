@@ -24,6 +24,6 @@ router.get("/logout", userController.logout);
 // Accept/Decline invitation
 router.post("/invite-response/:id", userController.inviteResponse);
 
-router.get("/", userController.getUser);
+router.get("/:id", userController.getUser);
 
 module.exports = router;

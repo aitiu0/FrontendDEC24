@@ -68,9 +68,9 @@ passport.use(LocalStrategy);
 
 app.use("/api/admin", adminRoutes);
 app.use("/api/users", userRoutes);
-app.get("/api/brands", brandRoutes);
-app.get("/api/categories", categoryRoutes);
-app.get("/api/products", productRoutes); 
+app.use("/api/brands", brandRoutes);
+app.use("/api/categories", categoryRoutes);
+app.use("/api/products", productRoutes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirnames, "/frontend/build")));

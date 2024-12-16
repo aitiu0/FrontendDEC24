@@ -1,6 +1,6 @@
 # Frontend Dec 24 - Aplicación MERN AITIU
 
-¡Bienvenido/a a FullstackTest4! Esta aplicación es una aplicación MERN (MongoDB, Express, React, Node.js) que puedes ejecutar localmente.
+¡Bienvenido/a a Frontend! Esta aplicación es una aplicación MERN (MongoDB, Express, React, Node.js) que puedes ejecutar localmente.
 
 ## Instrucciones de Instalación
 

@@ -9,11 +9,11 @@ import { MaterialTailwindControllerProvider } from "./context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider store={store}>
-    <MaterialTailwindControllerProvider>
-      <App />
-    </MaterialTailwindControllerProvider>
-  </Provider>
+    <Provider store={store}>
+        <MaterialTailwindControllerProvider>
+            <App />
+        </MaterialTailwindControllerProvider>
+    </Provider>
 );
 
 reportWebVitals();

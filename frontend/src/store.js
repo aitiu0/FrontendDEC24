@@ -8,7 +8,6 @@ import {
   userVerifyReducer,
   userVerifyStatusReducer,
 } from "./reducers/userReducer";
-
 import {
   adminGuestCreateReducer,
   adminGuestDetailsReducer,
@@ -40,6 +39,8 @@ import {
   adminCategoryDeleteReducer,
   adminCategoryListReducer,
 } from "./reducers/categoryReducer";
+import { guestSlice } from "./reducers/useGuestReducer";
+import  cartSlice  from "./reducers/cartSlice"; 
 
 const reducers = combineReducers({
   // USER
@@ -54,28 +55,33 @@ const reducers = combineReducers({
   adminGuestUpdate: adminGuestUpdateReducer,
   adminGuestDelete: adminGuestDeleteReducer,
   adminGuestList: adminGuestListReducer,
- // PRODUCT
- adminProductCreate: adminProductCreateReducer,
- adminProductDelete: adminProductDeleteReducer,
- adminProductUpdate: adminProductUpdateReducer,
- adminProductDetails: adminProductDetailsReducer,
- adminProductsList: adminProductsListReducer,
- productsList: productsListReducer,
- productSearch: productSearchReducer,
- productLimits: productLimitsReducer,
+  guest: guestSlice.reducer,
+
+  // CART
+  cart: cartSlice,
+  // PRODUCT
+  adminProductCreate: adminProductCreateReducer,
+  adminProductDelete: adminProductDeleteReducer,
+  adminProductUpdate: adminProductUpdateReducer,
+  adminProductDetails: adminProductDetailsReducer,
+  adminProductsList: adminProductsListReducer,
+  productsList: productsListReducer,
+  productSearch: productSearchReducer,
+  productLimits: productLimitsReducer,
+
   // CATEGORY
   adminCategoryCreate: adminCategoryCreateReducer,
   adminCategoryDetails: adminCategoryDetailsReducer,
   adminCategoryUpdate: adminCategoryUpdateReducer,
   adminCategoryDelete: adminCategoryDeleteReducer,
   adminCategoryList: adminCategoryListReducer,
+
   // BRAND
   adminBrandCreate: adminBrandCreateReducer,
   adminBrandDetails: adminBrandDetailsReducer,
   adminBrandUpdate: adminBrandUpdateReducer,
   adminBrandDelete: adminBrandDeleteReducer,
   adminBrandList: adminBrandListReducer,
-  
 });
 
 const initialState = {

@@ -40,6 +40,7 @@ import {
   adminCategoryDeleteReducer,
   adminCategoryListReducer,
 } from "./reducers/categoryReducer";
+import invitacionesReducer from "./reducers/invitacionesReducer";
 
 const reducers = combineReducers({
   // USER
@@ -75,6 +76,9 @@ const reducers = combineReducers({
   adminBrandUpdate: adminBrandUpdateReducer,
   adminBrandDelete: adminBrandDeleteReducer,
   adminBrandList: adminBrandListReducer,
+
+  // INVITACIONES
+  invitaciones: invitacionesReducer
   
 });
 

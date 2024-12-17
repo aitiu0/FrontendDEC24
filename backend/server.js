@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const cors = require('cors')
 const dotenv = require("dotenv");
 const colors = require("colors");
 const morgan = require("morgan");
@@ -33,6 +34,8 @@ if (process.env.NODE_ENV === "development") {
 
 const __dirnames = path.resolve();
 app.use("/uploads", express.static(path.join(__dirnames, "/uploads")));
+
+app.use(cors())
 
 app.use(express.json());
 //Use Patch and Put with override

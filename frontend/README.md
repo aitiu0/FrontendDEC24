@@ -3,10 +3,14 @@
 hi, im jesus and
 my routes are:
 
-/products
-/invitation
-/cart
-        </Routes>
+/products : product route
+
+
+/invitation : invitation route 
+
+
+
+/cart :  cart route 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

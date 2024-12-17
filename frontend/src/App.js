@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 // Public
 import LoginScreen from "./pages/public/LoginScreen";
 import NotFound from "./pages/public/NotFound";
+import Invitaciones from "./components/Invitaciones";
+import MesaRegalos from "./components/MesaRegalos";
 // Dashboard
 import { AdminDashboard, GuestDashboard } from "./layouts";
 const App = () => {
@@ -17,6 +19,8 @@ const App = () => {
           <Route path="/admin/*" element={<AdminDashboard />} />
           <Route path="/guest/*" element={<GuestDashboard />} />
           <Route path="/login" element={<LoginScreen />} exact />
+          <Route path="/invitaciones/:idInvitado" element={<Invitaciones /> } />
+          <Route path="/mesaderegalos/:idInvitado" element={<MesaRegalos />}/>
           <Route path="*" element={<NotFound />} exact />
         </Routes>
         <Footer />

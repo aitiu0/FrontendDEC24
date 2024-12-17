@@ -1,7 +1,4 @@
-import { combineReducers, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
 import { configureStore } from "@reduxjs/toolkit";
-import { composeWithDevTools } from "redux-devtools-extension";
 import {
   userLoginReducer,
   userRegisterReducer,
@@ -41,53 +38,48 @@ import {
   adminCategoryListReducer,
 } from "./reducers/categoryReducer";
 
-const reducers = combineReducers({
-  // USER
-  userLogin: userLoginReducer,
-  userRegister: userRegisterReducer,
-  userVerifyStatus: userVerifyStatusReducer,
-  userVerify: userVerifyReducer,
+import userSlice from "./features/users/userSlice";
 
-  // GUEST
-  adminGuestCreate: adminGuestCreateReducer,
-  adminGuestDetails: adminGuestDetailsReducer,
-  adminGuestUpdate: adminGuestUpdateReducer,
-  adminGuestDelete: adminGuestDeleteReducer,
-  adminGuestList: adminGuestListReducer,
- // PRODUCT
- adminProductCreate: adminProductCreateReducer,
- adminProductDelete: adminProductDeleteReducer,
- adminProductUpdate: adminProductUpdateReducer,
- adminProductDetails: adminProductDetailsReducer,
- adminProductsList: adminProductsListReducer,
- productsList: productsListReducer,
- productSearch: productSearchReducer,
- productLimits: productLimitsReducer,
-  // CATEGORY
-  adminCategoryCreate: adminCategoryCreateReducer,
-  adminCategoryDetails: adminCategoryDetailsReducer,
-  adminCategoryUpdate: adminCategoryUpdateReducer,
-  adminCategoryDelete: adminCategoryDeleteReducer,
-  adminCategoryList: adminCategoryListReducer,
-  // BRAND
-  adminBrandCreate: adminBrandCreateReducer,
-  adminBrandDetails: adminBrandDetailsReducer,
-  adminBrandUpdate: adminBrandUpdateReducer,
-  adminBrandDelete: adminBrandDeleteReducer,
-  adminBrandList: adminBrandListReducer,
-  
+const store = configureStore({
+  reducer: {
+    // USER
+    userLogin: userLoginReducer,
+    userRegister: userRegisterReducer,
+    userVerifyStatus: userVerifyStatusReducer,
+    userVerify: userVerifyReducer,
+    user: userSlice, // Aquí está tu slice corregido
+
+    // GUEST
+    adminGuestCreate: adminGuestCreateReducer,
+    adminGuestDetails: adminGuestDetailsReducer,
+    adminGuestUpdate: adminGuestUpdateReducer,
+    adminGuestDelete: adminGuestDeleteReducer,
+    adminGuestList: adminGuestListReducer,
+
+    // PRODUCT
+    adminProductCreate: adminProductCreateReducer,
+    adminProductDelete: adminProductDeleteReducer,
+    adminProductUpdate: adminProductUpdateReducer,
+    adminProductDetails: adminProductDetailsReducer,
+    adminProductsList: adminProductsListReducer,
+    productsList: productsListReducer,
+    productSearch: productSearchReducer,
+    productLimits: productLimitsReducer,
+
+    // CATEGORY
+    adminCategoryCreate: adminCategoryCreateReducer,
+    adminCategoryDetails: adminCategoryDetailsReducer,
+    adminCategoryUpdate: adminCategoryUpdateReducer,
+    adminCategoryDelete: adminCategoryDeleteReducer,
+    adminCategoryList: adminCategoryListReducer,
+
+    // BRAND
+    adminBrandCreate: adminBrandCreateReducer,
+    adminBrandDetails: adminBrandDetailsReducer,
+    adminBrandUpdate: adminBrandUpdateReducer,
+    adminBrandDelete: adminBrandDeleteReducer,
+    adminBrandList: adminBrandListReducer,
+  },
 });
-
-const initialState = {
-  userLogin: { userInfo: {} },
-};
-
-const middleware = [thunk];
-
-const store = configureStore(
-  { reducer: reducers },
-  initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
-);
 
 export default store;

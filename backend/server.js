@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const cors = require("cors");
 const dotenv = require("dotenv");
 const colors = require("colors");
 const morgan = require("morgan");
@@ -35,6 +36,7 @@ const __dirnames = path.resolve();
 app.use("/uploads", express.static(path.join(__dirnames, "/uploads")));
 
 app.use(express.json());
+app.use(cors());
 //Use Patch and Put with override
 app.use(methodOverride("_method"));
 //USe cookiePArser

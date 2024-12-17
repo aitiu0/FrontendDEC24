@@ -57,7 +57,7 @@ module.exports.localPassport = (req, res) => {
 
 module.exports.inviteResponse = asyncHandler(async (req, res) => {
   try {
-    const user = await User.findById(req.user._id);
+    const user = await User.findById(req.params.id);
     // Check if the user exists
     if (!user) {
       res.status(404).json({ message: "User not found" });

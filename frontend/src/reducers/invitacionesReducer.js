@@ -19,12 +19,22 @@ const invitacionesReducer = (state = initialState, action) => {
                 products_copy: action.payload
             }
         case "ADD_TO_CART":
-            const updatedProduct = [...state.cart, action.payload]
+            if(state.cart.some(product => product._id === action.payload._id )) {
+                return state
+            }
+            const updatedProduct = [...state.cart.filter(products => products._id !== action.payload._id ), action.payload]
             localStorage.setItem("CART", JSON.stringify(updatedProduct))
             return {
                 ...state,
                 cart: updatedProduct
             }
+        case "DELETE_TO_CART":
+            const removeProduct = state.cart.filter(product => product._id !== action.payload)
+            localStorage.setItem("CART",JSON.stringify(removeProduct))
+            return {
+                ...state,
+                cart: removeProduct
+            }    
         case "ORDER_PRODUCTS":
             return {
                 ...state,

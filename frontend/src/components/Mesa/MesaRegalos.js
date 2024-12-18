@@ -6,10 +6,6 @@ import Navbar from '../Navbar'
 
 const MesaRegalos = () => {
 
-  
- 
-
-
   const products = useSelector(state => state.invitaciones.products)
 
   const handleOrderChange = (e) => {
@@ -27,15 +23,17 @@ const MesaRegalos = () => {
   return (
     <div className='w-full min-h-screen'>
     <Navbar/>
+    
     <div className='mt-5 flex justify-center'>
       <select onChange={handleOrderChange}>
         <option value="">Order by Price</option>
         <option value="asc">Ascendente</option>
-        <option value="des">Descendiente</option>
+        <option value="desc">Descendiente</option>
       </select>
     </div>
+
       <div className=' mt-5'>
-      {products?.products?.map(product => (
+      {products.map(product => (
         <Product product={product} key={product.id} />
       ))}
       </div>

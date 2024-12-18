@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ToastContainer } from 'react-toastify';
 // Components
 import Footer from "./components/Footer";
 
@@ -26,6 +27,7 @@ const App = () => {
         </Routes>
         {/* <Footer /> */}
       </Router>
+      <ToastContainer autoClose={1500} pauseOnHover={false} />
     </main>
   );
 };
